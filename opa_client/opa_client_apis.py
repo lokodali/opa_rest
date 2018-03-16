@@ -149,7 +149,7 @@ class OPAClient(object):
         :type policy_name: str
         :type policy: str
         """
-        url = 'http://' + self.server + ':' + str(self.port) + self.version + '/policies/'
+        url = 'http://' + self.server + ':' + str(self.port) + '/' + self.version + '/policies/'
         data = ''
         data_names = list()
 
@@ -178,7 +178,7 @@ class OPAClient(object):
         :param json_data: Json data for Base Document
         :return: Rest Return
         """
-        url = 'http://' + self.server + ':' + str(self.port) + self.version + '/data/'
+        url = 'http://' + self.server + ':' + str(self.port) + '/' + self.version + '/data/'
         resp = RestClientApis.http_put_and_check_success(url + base_doc_name, json_data,
                                                          headers={'Content-Type': 'application/json'})
         if not resp.success:
